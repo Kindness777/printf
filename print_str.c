@@ -6,13 +6,21 @@
 /*   By: maxleroy <maxleroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:59:52 by maxleroy          #+#    #+#             */
-/*   Updated: 2025/01/17 16:00:18 by maxleroy         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:14:50 by maxleroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int print_str(char *&str)
+int print_str(char *str)
 {
-	
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }

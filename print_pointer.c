@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maxleroy <maxleroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 19:09:40 by maxleroy          #+#    #+#             */
-/*   Updated: 2025/01/17 19:19:25 by maxleroy         ###   ########.fr       */
+/*   Created: 2025/01/17 16:40:59 by maxleroy          #+#    #+#             */
+/*   Updated: 2025/01/17 18:41:01 by maxleroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+int print_pointer(unsigned long p)
+{
+	int count;
 
-int	ft_printf(const char *str1, ...);
-int	ft_strchr(const char *s, int c);
-int	print_char(char c);
-int	print_digit(int d);
-int	print_uns(unsigned int d);
-int	print_hex(unsigned long d);
-int	print_Bhex(unsigned int d);
-int	print_str(char *str);
-int	print_pointer(unsigned long p);
-
-#endif
+	count = 0;
+	count += write(1,"0x", 2);
+	count += print_hex(p);
+	return (count);
+}
