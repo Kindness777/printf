@@ -6,7 +6,7 @@
 /*   By: maxleroy <maxleroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:05:55 by maxleroy          #+#    #+#             */
-/*   Updated: 2025/01/16 18:03:04 by maxleroy         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:48:14 by maxleroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,26 @@ int	checktype(va_list args, char id)
 	if (id == 'd')
 	{
 		i += print_digit(va_arg(args, int));
+	}
+	if (id == 'i')
+	{
+		i += print_digit(va_arg(args, int));
+	}
+	if (id == 'u')
+	{
+		i += print_uns(va_arg(args, unsigned int));
+	}
+	if (id == 'x')
+	{
+		i += print_hex(va_arg(args, unsigned int));
+	}
+	if (id == 'X')
+	{
+		i += print_hex(va_arg(args, unsigned int));
+	}
+	if (id == 's')
+	{
+		i += print_str(va_arg(args, char *str));
 	}
 	return (i);
 }
@@ -49,6 +69,5 @@ int	ft_printf(const char *str1, ...)
 }
 int	main(void)
 {
-	ft_printf("wsh il faut %d repas par jour\n", 355);
-	printf("yo moi c %s j'ai %d ans", "kin", 23);
+	ft_printf("wsh il faut %x repas par jour\n", 34);
 }

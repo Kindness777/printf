@@ -6,7 +6,7 @@
 /*   By: maxleroy <maxleroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:09:40 by maxleroy          #+#    #+#             */
-/*   Updated: 2025/01/16 13:18:36 by maxleroy         ###   ########.fr       */
+/*   Updated: 2025/01/17 13:46:56 by maxleroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int	ft_printf(const char *str1, ...);
 int	ft_strchr(const char *s, int c);
 int	print_char(char c);
 int	print_digit(int d);
+int	print_uns(unsigned int d);
+int	print_hex(unsigned int);
 
 #endif

@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maxleroy <maxleroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 14:08:54 by maxleroy          #+#    #+#             */
-/*   Updated: 2025/01/17 14:17:02 by maxleroy         ###   ########.fr       */
+/*   Created: 2025/01/17 15:59:52 by maxleroy          #+#    #+#             */
+/*   Updated: 2025/01/17 16:00:18 by maxleroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
-int	main(void)
+int print_str(char *&str)
 {
-	printf("mon test:%d", (34/16));
+	
 }
-//difference entre %d et %i
-//limite du print_digit taille
