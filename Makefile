@@ -1,19 +1,22 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c ft_strchr.c print_char.c print_digit.c print_uns.c print_hex.c print_Bhex.c print_str.c print_pointer.c
+SRCS = ft_printf.c ft_strchr.c print_char.c print_digit.c print_uns.c print_hex.c print_bhex.c print_str.c print_pointer.c
 
 OBJS = $(SRCS:.c=.o)
 
 HEADERS = ft_printf.h
 
-NAME = ft_printf
+LIBFT = ../home/maxleroy/Documents/printf/libftprintf.a
+
+NAME = libftprintf.a
+
+LIBC = ar -rc
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-
+	$(LIBC) $(NAME) $(OBJS)
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 

@@ -6,7 +6,7 @@
 /*   By: maxleroy <maxleroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:09:33 by maxleroy          #+#    #+#             */
-/*   Updated: 2025/01/16 17:40:18 by maxleroy         ###   ########.fr       */
+/*   Updated: 2025/01/23 11:31:12 by maxleroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return (2147483647);
 	while (s[i] && c != s[i])
 		i++;
 	if (c == s[i])

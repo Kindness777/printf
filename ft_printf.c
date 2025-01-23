@@ -6,7 +6,7 @@
 /*   By: maxleroy <maxleroy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:05:55 by maxleroy          #+#    #+#             */
-/*   Updated: 2025/01/17 20:03:23 by maxleroy         ###   ########.fr       */
+/*   Updated: 2025/01/23 11:35:24 by maxleroy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,39 +18,24 @@ int	checktype(va_list args, char id)
 
 	i = 0;
 	if (id == 'd')
-	{
 		i += print_digit(va_arg(args, int));
-	}
 	if (id == 'i')
-	{
 		i += print_digit(va_arg(args, int));
-	}
 	if (id == 'u')
-	{
 		i += print_uns(va_arg(args, unsigned int));
-	}
 	if (id == 'x')
-	{
 		i += print_hex(va_arg(args, unsigned long));
-	}
 	if (id == 'X')
-	{
-		i += print_Bhex(va_arg(args, unsigned int));
-	}
+		i += print_bhex(va_arg(args, unsigned int));
 	if (id == 's')
-	{
 		i += print_str(va_arg(args, char *));
-	}
 	if (id == 'c')
-	{
 		i += print_char(va_arg(args, int));
-	}
 	if (id == 'p')
-	{
 		i += print_pointer(va_arg(args, unsigned long));
-	}
 	return (i);
 }
+
 int	ft_printf(const char *str1, ...)
 {
 	va_list	args;
@@ -68,13 +53,6 @@ int	ft_printf(const char *str1, ...)
 				j += write(1, &str1[i], 1);
 			else if (ft_strchr("diuxXscp", str1[i]))
 				j += checktype(args, str1[i]);
-			else
-			{
-				j += write(1,
-						"error: unknown conversion type characte  in format",
-						50);
-				return (0);
-			}
 		}
 		else
 			j += print_char(str1[i]);
@@ -83,9 +61,15 @@ int	ft_printf(const char *str1, ...)
 	va_end(args);
 	return (j);
 }
-int	main(void)
+/*int	main(void)
 {
-	int i = 2;
+	int	i;
+
+	i = 2;
+	ft_printf("let's test2: %d %d\n", (int)-2147483648, 2147483647);
+	printf("let's test2: %d %d\n", (int)-2147483648, 2147483647);
+	ft_printf("let's test2: %p\n", NULL);
+	printf("let's test2: %p\n", NULL);
 	ft_printf("let's test1: %i\n", i);
 	printf("let's test2: %i\n", i);
 	ft_printf("let's test1: %d\n", i);
@@ -102,4 +86,4 @@ int	main(void)
 	printf("let's test2: %c\n", 'c');
 	ft_printf("let's test1: %p\n", &i);
 	printf("let's test2: %p\n", &i);
-}
+}*/
